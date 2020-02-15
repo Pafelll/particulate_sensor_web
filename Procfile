@@ -1,1 +1,1 @@
-web: gunicorn enc_dec_text.wsgi --log-file -
+web: gunicorn particulate-sensor.wsgi --log-file -
