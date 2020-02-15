@@ -1,1 +1,1 @@
-web: gunicorn particulate-sensor.wsgi --log-file -
+web: gunicorn particulate_sensor_web.wsgi --log-file -
