@@ -10,5 +10,6 @@ router.register('user', views.UserViewSet, base_name='User')
 
 urlpatterns = [
     path('api/', include(router.urls)),
+    
     path('sensor/', TemplateView.as_view(template_name='sensor.html'))
 ]
