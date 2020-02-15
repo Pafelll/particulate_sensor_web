@@ -1,0 +1,1 @@
+web: gunicorn enc_dec_text.wsgi --log-file -

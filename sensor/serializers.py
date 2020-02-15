@@ -7,7 +7,7 @@ class SensorSerializer(serializers.ModelSerializer):
     class Meta:
         model = SensorData
         fields = ('id', 'date', 'pm1', 'pm25', 'pm10', 'temperature', 'humidity', 'pressure', 'owner')
-        owner = serializers.ReadOnlyField(source='owner.username')
+        owner = serializers.ReadOnlyField(source='owner.owner')
 
 
 class UserSerializer(serializers.ModelSerializer):

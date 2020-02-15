@@ -5,12 +5,13 @@ from django.contrib.auth.models import User
 from rest_framework import permissions
 from sensor.permissions import IsOwnerOrReadOnly
 import datetime as dt
+from django.utils.decorators import method_decorator
 
 
 class SensorDataView(viewsets.ModelViewSet):
-    # queryset = SensorData.objects.all()
+    queryset = SensorData.objects.all()
     serializer_class = SensorSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+    permission_classes = [permissions.IsAuthenticated, IsOwnerOrReadOnly]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
