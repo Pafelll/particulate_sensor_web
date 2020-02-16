@@ -10,7 +10,7 @@ class SensorData(models.Model):
     temperature = models.DecimalField(max_digits=5, decimal_places=1)
     humidity = models.IntegerField()
     pressure = models.IntegerField()
-    owner = models.ForeignKey('auth.User', related_name='measure_id', on_delete=models.CASCADE)
+    owner = models.ForeignKey('auth.User', related_name='measure_id', on_delete=models.CASCADE, required=False)
 
     def __str__(self):
         return str(self.date.strftime("%d-%b-%Y %H:%M"))
